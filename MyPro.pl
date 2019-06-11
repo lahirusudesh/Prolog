@@ -16,3 +16,7 @@ male(pasan).
 mother(X,Y):-parent_of(X,Y),female(X).
 grandparent(X,Z):-parent_of(X,Y),parent_of(Y,Z).
 sister(X,Y):-parent_of(Z,X),parent_of(Z,Y),female(X),not(X=Y).
+happy(X):-parent_of(X,_).
+hasTwoChildren(X):- parent_of(X,Y),sister(_,Y).
+grandchild(X,Z):-parent_of(Z,Y),parent_of(Y,X).
+aunt(X,Y):-parent_of(Z,Y),sister(X,Z).
